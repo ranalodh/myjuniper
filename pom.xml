@@ -47,6 +47,9 @@
 					<buildSuccessOnTestFailure>false</buildSuccessOnTestFailure>
 					<checkBuildResult>true</checkBuildResult>
 					<skipAfterFailureCount>1</skipAfterFailureCount>
+					<forkCount>3</forkCount>
+					<reuseForks>true</reuseForks>
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 				</configuration>
 			</plugin>
 		</plugins>
