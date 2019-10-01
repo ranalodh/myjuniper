@@ -61,7 +61,7 @@ public class CommonUtil {
   public static WebDriver getDriver() {
 
 		try {
-				System.setProperty("webdriver.chrome.driver","src/main/java/chromedriver_linux64/chromedriver");
+				System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
 				//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 			    //System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
