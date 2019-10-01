@@ -63,13 +63,13 @@ public class CommonUtil {
 		try {
 				System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
 				//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
-			    //System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
+			   //System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
-				options.setBinary("/usr/bin/chromium-browser");
-				options.setHeadless(true);
+				options.setBinary("/usr/lib/chromium/");
+				options.setHeadless(true);				
 				webDriver = new ChromeDriver(options);	
 				webDriver.manage().window().maximize();		
-				webDriver.navigate().refresh();
+				webDriver.navigate().refresh();				
 		}catch (Exception exception) {
 			exception.printStackTrace();
 		}
