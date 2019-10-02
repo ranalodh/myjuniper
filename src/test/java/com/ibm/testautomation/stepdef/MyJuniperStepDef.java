@@ -6,6 +6,9 @@ import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
@@ -23,17 +26,19 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MyJuniperStepDef extends ExtentReportListener {
 
 	PropertiesFileReader obj = new PropertiesFileReader();
-	public static WebDriver driver = CommonUtil.getDriver();
+	//public static WebDriver driver = CommonUtil.getDriver();
 	ExtentTest logInfo = null;
 	SoftAssert softAssert = new SoftAssert();
 	CommonUtil commonUtil = new CommonUtil();
 	LoginPage loginPage = new LoginPage();
 	MyJuniperPage myJuniperPage = new MyJuniperPage();
 	private final static Logger LOGGER = Logger.getLogger(MyJuniperStepDef.class.getName());
+	private WebDriver driver = null;
 
 	/**
 	 * 
@@ -42,6 +47,17 @@ public class MyJuniperStepDef extends ExtentReportListener {
 	@Before
 	public void beforeScenario(Scenario scenario) {
 
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.setHeadless(true);	
+		DesiredCapabilities cap = DesiredCapabilities.chrome();
+		cap.setCapability(ChromeOptions.CAPABILITY, options);
+        cap.setCapability("applicationCacheEnabled", false);			
+		driver = new ChromeDriver(cap);
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.navigate().refresh();
+		
 		test = extent.createTest(scenario.getName());
 		test = test.createNode(scenario.getName());
 	}
