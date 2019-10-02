@@ -88,14 +88,16 @@ public class MyJuniperPage extends BasePage {
 	// login by Customer Email Id
 	public void externalLogin(WebDriver driver) throws InterruptedException, Throwable {
 
+		Properties properties = obj.getProperty();
+		
 		LOGGER.info("actionLib.isElementExist(loginViewContainer, driver) "
 				+ actionLib.isElementExist(loginViewContainer, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT));
 
 		if (actionLib.isElementExist(loginViewContainer, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)) {
 
-			actionLib.sendValueToInput(custEmailInput, driver, System.getProperty("custemail"));
+			actionLib.sendValueToInput(custEmailInput, driver, properties.getProperty("custemail"));
 			actionLib.javascriptClick(loginReasonOpt, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
-			actionLib.selectByValue(loginReasonOpt, driver, System.getProperty("reason"));
+			actionLib.selectByValue(loginReasonOpt, driver, properties.getProperty("reason"));
 			commonUtil.captureScreen(driver);
 			actionLib.javascriptClick(externalLogin, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 

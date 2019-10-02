@@ -1,17 +1,12 @@
 <html>
 <head>
-<title>TestNG: Automation Test Report</title>
+<title>TestNG:  Automation Test Report</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
-.log {
-	display: none;
-}
-
-.stack-trace {
-	display: none;
-}
+.log { display: none;} 
+.stack-trace { display: none;} 
 </style>
 <script type="text/javascript">
 <!--
@@ -58,53 +53,41 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-	<h2 align='center'>Automation Test Report</h2>
-	<table border='1' align="center">
-		<tr>
-			<td>Tests passed/Failed/Skipped:</td>
-			<td>1/0/0</td>
-		</tr>
-		<tr>
-			<td>Started on:</td>
-			<td>Thu Jul 04 15:40:08 IST 2019</td>
-		</tr>
-		<tr>
-			<td>Total time:</td>
-			<td>153 seconds (153168 ms)</td>
-		</tr>
-		<tr>
-			<td>Included groups:</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>Excluded groups:</td>
-			<td></td>
-		</tr>
-	</table>
-	<p />
-	<small><i>(Hover the method name to see the test class
-			name)</i></small>
-	<p />
-	<table width='100%' border='1' class='invocation-passed'>
-		<tr>
-			<td colspan='4' align='center'><b>PASSED TESTS</b></td>
-		</tr>
-		<tr>
-			<td><b>Test method</b></td>
-			<td width="30%"><b>Exception</b></td>
-			<td width="10%"><b>Time (seconds)</b></td>
-			<td><b>Instance</b></td>
-		</tr>
-		<tr>
-			<td title='com.testautomation.testrunner.TestRunner.feature()'><b>feature</b><br>Test
-				class: com.testautomation.testrunner.TestRunner<br>Parameters:
-				"Verify Completion Date and Log Description", "EDDI Application Flow
-				Check"</td>
-			<td></td>
-			<td>152</td>
-			<td>com.testautomation.testrunner.TestRunner@31610302</td>
-		</tr>
-	</table>
-	<p>
+<h2 align='center'>Automation Test Report</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Oct 02 18:01:39 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>9 seconds (9854 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ibm.testautomation.testrunner.TestRunner.feature()'><b>feature</b><br>Test class: com.ibm.testautomation.testrunner.TestRunner<br>Parameters: "Verify MyJuniper Application", "MyJuniper Application Flow Check"</td>
+<td><div><pre>java.lang.AssertionError: null
+	at com.ibm.testautomation.stepdef.MyJuniperStepDef.open_myjuniper_application(MyJuniperStepDef.java:100)
+	at ?.Open MyJuniper Application(src/test/java/Features/MyJuniper.feature:6)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace502891368", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace502891368'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at com.ibm.testautomation.stepdef.MyJuniperStepDef.open_myjuniper_application(MyJuniperStepDef.java:100)
+	at ?.Open MyJuniper Application(src/test/java/Features/MyJuniper.feature:6)
+</pre></div></td>
+<td>9</td>
+<td>com.ibm.testautomation.testrunner.TestRunner@78c03f1f</td></tr>
+</table><p>
 </body>
 </html>

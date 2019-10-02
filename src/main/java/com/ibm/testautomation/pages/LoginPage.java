@@ -1,5 +1,7 @@
 package com.ibm.testautomation.pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,6 +19,7 @@ public class LoginPage extends BasePage {
 	private By errorDiv = By.xpath("//div[@class='error-message']");
 	ActionLib actionLib = new ActionLib();
 	CommonUtil commonUtil = new CommonUtil();
+	PropertiesFileReader obj = new PropertiesFileReader();
 
 	/**
 	 * 
@@ -35,10 +38,12 @@ public class LoginPage extends BasePage {
 	 * @throws Throwable
 	 */
 	public void login(WebDriver driver) throws Throwable {
+		
+		Properties properties = obj.getProperty();
 
 		if (actionLib.isElementExist(loginFormContainer, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)) {
-			actionLib.sendValueToInput(userId, driver, System.getProperty("username"));
-			actionLib.sendValueToInput(password, driver, System.getProperty("password"));
+			actionLib.sendValueToInput(userId, driver, properties.getProperty("username"));
+			actionLib.sendValueToInput(password, driver, properties.getProperty("password"));
 			// actionLib.javascriptClick(rememberMe, driver);
 			commonUtil.captureScreen(driver);
 			actionLib.javascriptClick(loginButton, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);

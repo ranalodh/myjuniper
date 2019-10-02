@@ -1,0 +1,8 @@
+com\ibm\testautomation\util\CommonUtil.class
+com\ibm\testautomation\util\ActionLib.class
+com\ibm\testautomation\util\PropertiesFileReader.class
+com\ibm\testautomation\pages\LoginPage.class
+com\ibm\testautomation\util\ActionLib$1.class
+com\ibm\testautomation\pages\BasePage.class
+com\ibm\testautomation\pages\MyJuniperPage.class
+com\ibm\testautomation\util\ActionLib$2.class

@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>MyJuniperTestAutomation</groupId>
+	<groupId>com.ibm.testautomation</groupId>
 	<artifactId>MyJuniperTestAutomation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MyJuniperTestAutomation</name>
@@ -34,13 +34,13 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.0</version>
 				<configuration>
-					<systemPropertyVariables>
+					<!--  <systemPropertyVariables>
 						<env>${targetenv}</env>
 						<username>${username}</username>
 						<password>${password}</password>
 						<custemail>${custemail}</custemail>
 						<reason>${reason}</reason>
-					</systemPropertyVariables>
+					</systemPropertyVariables>-->
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>

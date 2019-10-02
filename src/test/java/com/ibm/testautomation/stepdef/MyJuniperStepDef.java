@@ -51,8 +51,7 @@ public class MyJuniperStepDef extends ExtentReportListener {
 		ChromeOptions options = new ChromeOptions();
 		options.setHeadless(true);	
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability(ChromeOptions.CAPABILITY, options);
-        cap.setCapability("applicationCacheEnabled", false);			
+		cap.setCapability(ChromeOptions.CAPABILITY, options);		
 		driver = new ChromeDriver(cap);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
@@ -87,12 +86,12 @@ public class MyJuniperStepDef extends ExtentReportListener {
 			logInfo = test.createNode(new GherkinKeyword("Given"), "Open MyJuniper Application");
 			/** Open the MyJuniper Application **/
 			LOGGER.info("Open the MyJuniper Application");
-			loginPage.launchBrowser(System.getProperty("env"), driver);
+			loginPage.launchBrowser(properties.getProperty("env"), driver);
 			String expectedLoginPageTitle = properties.getProperty("loginpage.title");
 			String actualLoginPageTitle = loginPage.getTitle(driver);
 			Assert.assertEquals(actualLoginPageTitle, expectedLoginPageTitle, "MyJuniper Login Page is not opening!");
 
-			logInfo.pass("Successfully open MyJuniper Login Page on - " + System.getProperty("env"));
+			logInfo.pass("Successfully open MyJuniper Login Page on - " + properties.getProperty("env"));
 			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
 
 		} catch (AssertionError | Exception e) {
