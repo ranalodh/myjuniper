@@ -26,19 +26,18 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MyJuniperStepDef extends ExtentReportListener {
 
 	PropertiesFileReader obj = new PropertiesFileReader();
-	//public static WebDriver driver = CommonUtil.getDriver();
+	public static WebDriver driver = CommonUtil.getDriver();
 	ExtentTest logInfo = null;
 	SoftAssert softAssert = new SoftAssert();
 	CommonUtil commonUtil = new CommonUtil();
 	LoginPage loginPage = new LoginPage();
 	MyJuniperPage myJuniperPage = new MyJuniperPage();
 	private final static Logger LOGGER = Logger.getLogger(MyJuniperStepDef.class.getName());
-	private WebDriver driver = null;
+	//private WebDriver driver = null;
 
 	/**
 	 * 
@@ -47,15 +46,15 @@ public class MyJuniperStepDef extends ExtentReportListener {
 	@Before
 	public void beforeScenario(Scenario scenario) {
 
-		WebDriverManager.chromedriver().setup();
+		/*WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
-		options.setHeadless(true);	
+		options.setHeadless(false);	
 		DesiredCapabilities cap = DesiredCapabilities.chrome();
 		cap.setCapability(ChromeOptions.CAPABILITY, options);		
 		driver = new ChromeDriver(cap);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.navigate().refresh();
+		driver.navigate().refresh();*/
 		
 		test = extent.createTest(scenario.getName());
 		test = test.createNode(scenario.getName());
