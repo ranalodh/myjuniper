@@ -67,7 +67,7 @@ public class CommonUtil {
 			  // System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.setBinary("/usr/bin/chromium-browser");
-				options.setHeadless(false);				
+				options.setHeadless(true);				
 				webDriver = new ChromeDriver(options);	
 				webDriver.manage().window().maximize();		
 				webDriver.navigate().refresh();				
