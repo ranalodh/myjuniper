@@ -62,12 +62,14 @@ public class CommonUtil {
 
 		try {
 				System.setProperty("webdriver.chrome.driver","src/main/java/chromedriver/chromedriver");
+				
 				LOGGER.info("webdriver.chrome.driver " + System.getProperty("webdriver.chrome.driver"));
-				//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
-			  // System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
+				
 				ChromeOptions options = new ChromeOptions();
 				options.setBinary("/usr/bin/chromium-browser");
-				options.setHeadless(true);				
+				//options.setHeadless(true);		
+				options.addArguments("--headless");
+				options.addArguments("--no-sandbox");
 				webDriver = new ChromeDriver(options);	
 				webDriver.manage().window().maximize();		
 				webDriver.navigate().refresh();				
