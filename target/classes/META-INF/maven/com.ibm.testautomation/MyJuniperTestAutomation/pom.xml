@@ -61,7 +61,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass></mainClass>
+							<mainClass>korechi</mainClass>
 						</manifest>
 					</archive>
 
