@@ -61,7 +61,7 @@ public class CommonUtil {
   public static WebDriver getDriver() {
 
 		try {
-				System.setProperty("webdriver.chrome.driver","/var/jenkins_home/workspace/myjuniper/src/main/java/chromedriver_linux64/chromedriver");
+				System.setProperty("webdriver.chrome.driver","/chromedriver/chromedriver");
 				LOGGER.info("webdriver.chrome.driver " + System.getProperty("webdriver.chrome.driver"));
 				//System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 			  // System.setProperty("webdriver.chrome.driver","C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
