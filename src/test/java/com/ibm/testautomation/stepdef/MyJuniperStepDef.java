@@ -30,7 +30,8 @@ import cucumber.api.java.en.When;
 public class MyJuniperStepDef extends ExtentReportListener {
 
 	PropertiesFileReader obj = new PropertiesFileReader();
-	public static WebDriver driver = CommonUtil.getDriver();
+	//public static WebDriver driver = CommonUtil.getDriver();
+	public static WebDriver driver = CommonUtil.getRemoteDriver();//for grid only
 	ExtentTest logInfo = null;
 	SoftAssert softAssert = new SoftAssert();
 	CommonUtil commonUtil = new CommonUtil();
@@ -46,16 +47,6 @@ public class MyJuniperStepDef extends ExtentReportListener {
 	@Before
 	public void beforeScenario(Scenario scenario) {
 
-		/*WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
-		options.setHeadless(false);	
-		DesiredCapabilities cap = DesiredCapabilities.chrome();
-		cap.setCapability(ChromeOptions.CAPABILITY, options);		
-		driver = new ChromeDriver(cap);
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.navigate().refresh();*/
-		
 		test = extent.createTest(scenario.getName());
 		test = test.createNode(scenario.getName());
 	}

@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation Test Report" duration-ms="68360" started-at="2019-10-02T15:02:32Z" finished-at="2019-10-02T15:03:41Z">
+  <suite name="Automation Test Report" duration-ms="99348" started-at="2019-10-04T03:13:06Z" finished-at="2019-10-04T03:14:45Z">
     <groups>
     </groups>
-    <test name="Automation Test Report" duration-ms="68360" started-at="2019-10-02T15:02:32Z" finished-at="2019-10-02T15:03:41Z">
+    <test name="Automation Test Report" duration-ms="99348" started-at="2019-10-04T03:13:06Z" finished-at="2019-10-04T03:14:45Z">
       <class name="com.ibm.testautomation.testrunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1593948d]" name="setUpClass" is-config="true" duration-ms="573" started-at="2019-10-02T15:02:33Z" finished-at="2019-10-02T15:02:34Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="setUpClass" is-config="true" duration-ms="147" started-at="2019-10-04T03:13:06Z" finished-at="2019-10-04T03:13:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1593948d]" name="feature" duration-ms="66579" started-at="2019-10-02T15:02:34Z" data-provider="features" finished-at="2019-10-02T15:03:41Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="feature" duration-ms="98928" started-at="2019-10-04T03:13:06Z" data-provider="features" finished-at="2019-10-04T03:14:45Z">
           <params>
             <param index="0">
               <value>
@@ -24,49 +24,23 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=77.0.3865.90)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FDOBOJL', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\RANADI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55988}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 103a29bc53bb05aa97de659715a31d04]]>
+              <![CDATA[null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=77.0.3865.90)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FDOBOJL', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\RANADI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55988}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 103a29bc53bb05aa97de659715a31d04
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-at com.ibm.testautomation.listener.ExtentReportListener.captureScreenShot(ExtentReportListener.java:101)
-at com.ibm.testautomation.listener.ExtentReportListener.testStepHandle(ExtentReportListener.java:69)
-at com.ibm.testautomation.stepdef.MyJuniperStepDef.enter_customer_email(MyJuniperStepDef.java:154)
-at ✽.Enter Customer Email(src/test/java/Features/MyJuniper.feature:8)
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_mnadatory_parent_tabs_are_present(MyJuniperStepDef.java:166)
+at ✽.Verify All Mandatory Parent Tabs are present(src/test/java/Features/MyJuniper.feature:9)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="SKIP" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1593948d]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2019-10-02T15:03:41Z" finished-at="2019-10-02T15:03:41Z">
+        <test-method status="SKIP" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2019-10-04T03:14:45Z" finished-at="2019-10-04T03:14:45Z">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[Skipped after failure. See parameter [skipAfterFailureCount] in surefire or failsafe plugin.]]>

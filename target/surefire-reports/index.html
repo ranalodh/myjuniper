@@ -129,27 +129,10 @@
                   </a> <!-- feature("Verify MyJuniper Application", "MyJuniper Application Flow Check") -->
                   <span class="method-name">feature</span>
                   <span class="parameters">("Verify MyJuniper Application", "MyJuniper Application Flow Check")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=77.0.3865.90)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-FDOBOJL&apos;, ip: &apos;10.0.75.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\RANADI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55988}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 103a29bc53bb05aa97de659715a31d04
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-	at com.ibm.testautomation.listener.ExtentReportListener.captureScreenShot(ExtentReportListener.java:101)
-	at com.ibm.testautomation.listener.ExtentReportListener.testStepHandle(ExtentReportListener.java:69)
-	at com.ibm.testautomation.stepdef.MyJuniperStepDef.enter_customer_email(MyJuniperStepDef.java:154)
-	at ✽.Enter Customer Email(src/test/java/Features/MyJuniper.feature:8)
-... Removed 4 stack frames
+                  <div class="stack-trace">java.lang.AssertionError: null
+	at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_mnadatory_parent_tabs_are_present(MyJuniperStepDef.java:166)
+	at ✽.Verify All Mandatory Parent Tabs are present(src/test/java/Features/MyJuniper.feature:9)
+... Removed 2 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -214,7 +197,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
 data.setCell(0, 2, 'com.ibm.testautomation.testrunner.TestRunner')
-data.setCell(0, 3, 66579);
+data.setCell(0, 3, 98928);
 window.suiteTableData['Automation_Test_Report']= { tableData: data, tableDiv: 'times-div-Automation_Test_Report'}
 return data;
 }
@@ -254,7 +237,7 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">feature("Verify MyJuniper Application", "MyJuniper Application Flow Check")</span>
-                <span class="method-start">734 ms</span>
+                <span class="method-start">218 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

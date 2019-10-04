@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Oct 03 12:47:13 IST 2019</td>
+<td>Started on:</td><td>Thu Oct 03 16:23:25 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>513 seconds (513098 ms)</td>
+<tr><td>Total time:</td><td>99 seconds (99069 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,52 +76,18 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.ibm.testautomation.testrunner.TestRunner.feature()'><b>feature</b><br>Test class: com.ibm.testautomation.testrunner.TestRunner<br>Parameters: "Verify MyJuniper Application", "MyJuniper Application Flow Check"</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=77.0.3865.90)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-FDOBOJL&apos;, ip: &apos;9.85.126.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\RANADI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53824}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 91e39a8f808d71361848bb3a57aee0f7
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-	at com.ibm.testautomation.listener.ExtentReportListener.captureScreenShot(ExtentReportListener.java:101)
-	at com.ibm.testautomation.listener.ExtentReportListener.testStepHandle(ExtentReportListener.java:69)
-	at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_tabs_are_working(MyJuniperStepDef.java:224)
-	at ?.Verify All Tabs are working(src/test/java/Features/MyJuniper.feature:10)
-... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace466841626", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace466841626'><pre>org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=77.0.3865.90)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-FDOBOJL&apos;, ip: &apos;9.85.126.111&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\RANADI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53824}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 91e39a8f808d71361848bb3a57aee0f7
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-	at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-	at com.ibm.testautomation.listener.ExtentReportListener.captureScreenShot(ExtentReportListener.java:101)
-	at com.ibm.testautomation.listener.ExtentReportListener.testStepHandle(ExtentReportListener.java:69)
-	at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_tabs_are_working(MyJuniperStepDef.java:224)
-	at ?.Verify All Tabs are working(src/test/java/Features/MyJuniper.feature:10)
+<td><div><pre>java.lang.AssertionError: null
+	at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_mnadatory_parent_tabs_are_present(MyJuniperStepDef.java:175)
+	at ?.Verify All Mandatory Parent Tabs are present(src/test/java/Features/MyJuniper.feature:9)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1752402342", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1752402342'><pre>java.lang.AssertionError: null
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.fail(Assert.java:103)
+	at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_mnadatory_parent_tabs_are_present(MyJuniperStepDef.java:175)
+	at ?.Verify All Mandatory Parent Tabs are present(src/test/java/Features/MyJuniper.feature:9)
 </pre></div></td>
-<td>512</td>
-<td>com.ibm.testautomation.testrunner.TestRunner@78c03f1f</td></tr>
+<td>98</td>
+<td>com.ibm.testautomation.testrunner.TestRunner@544fe44c</td></tr>
 </table><p>
 </body>
 </html>

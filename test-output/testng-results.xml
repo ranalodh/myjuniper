@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation Test Report" duration-ms="513098" started-at="2019-10-03T07:17:13Z" finished-at="2019-10-03T07:25:46Z">
+  <suite name="Automation Test Report" duration-ms="99069" started-at="2019-10-03T10:53:25Z" finished-at="2019-10-03T10:55:04Z">
     <groups>
     </groups>
-    <test name="Automation Test Report" duration-ms="513098" started-at="2019-10-03T07:17:13Z" finished-at="2019-10-03T07:25:46Z">
+    <test name="Automation Test Report" duration-ms="99069" started-at="2019-10-03T10:53:25Z" finished-at="2019-10-03T10:55:04Z">
       <class name="com.ibm.testautomation.testrunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@78c03f1f]" name="setUpClass" is-config="true" duration-ms="142" started-at="2019-10-03T07:17:14Z" finished-at="2019-10-03T07:17:14Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="setUpClass" is-config="true" duration-ms="198" started-at="2019-10-03T10:53:25Z" finished-at="2019-10-03T10:53:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@78c03f1f]" name="feature" duration-ms="512595" started-at="2019-10-03T07:17:14Z" data-provider="features" finished-at="2019-10-03T07:25:46Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="feature" duration-ms="98455" started-at="2019-10-03T10:53:26Z" data-provider="features" finished-at="2019-10-03T10:55:04Z">
           <params>
             <param index="0">
               <value>
@@ -24,47 +24,23 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[chrome not reachable
-  (Session info: chrome=77.0.3865.90)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FDOBOJL', ip: '9.85.126.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\RANADI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53824}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 91e39a8f808d71361848bb3a57aee0f7]]>
+              <![CDATA[null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
-  (Session info: chrome=77.0.3865.90)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FDOBOJL', ip: '9.85.126.111', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\RANADI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53824}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 91e39a8f808d71361848bb3a57aee0f7
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:295)
-at com.ibm.testautomation.listener.ExtentReportListener.captureScreenShot(ExtentReportListener.java:101)
-at com.ibm.testautomation.listener.ExtentReportListener.testStepHandle(ExtentReportListener.java:69)
-at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_tabs_are_working(MyJuniperStepDef.java:224)
-at ✽.Verify All Tabs are working(src/test/java/Features/MyJuniper.feature:10)
+              <![CDATA[java.lang.AssertionError: null
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.fail(Assert.java:103)
+at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_mnadatory_parent_tabs_are_present(MyJuniperStepDef.java:175)
+at ✽.Verify All Mandatory Parent Tabs are present(src/test/java/Features/MyJuniper.feature:9)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@78c03f1f]" name="tearDownClass" is-config="true" duration-ms="6" started-at="2019-10-03T07:25:46Z" finished-at="2019-10-03T07:25:46Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="tearDownClass" is-config="true" duration-ms="13" started-at="2019-10-03T10:55:04Z" finished-at="2019-10-03T10:55:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

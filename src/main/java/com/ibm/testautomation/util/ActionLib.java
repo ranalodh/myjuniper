@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -48,7 +49,7 @@ public class ActionLib {
 		}
 	}
 
-	public void wait(WebDriver driver) throws Throwable
+	/*public void wait(WebDriver driver) throws Throwable
 
 	{
 
@@ -68,7 +69,7 @@ public class ActionLib {
 
 		}
 	}
-
+*/
 	public boolean isElementExist(By objectref, WebDriver driver, int intSyncTimeOut) throws Throwable
 
 	{
@@ -514,5 +515,13 @@ public class ActionLib {
 
 		return elementReturned;
 	}
+	/*
+	public WebElement WaitForObjectToLoadAndReturnIfExist(By objectref, int intTimeInMillis, WebDriver driver) throws Exception {
+		
+		WebDriverWait wait = new WebDriverWait(driver, intTimeInMillis);
+	   // WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(objectref));
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(objectref));
+	    return element;
+	}*/
 
 }
