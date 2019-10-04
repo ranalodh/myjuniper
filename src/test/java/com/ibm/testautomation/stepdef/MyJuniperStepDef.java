@@ -230,10 +230,10 @@ public class MyJuniperStepDef extends ExtentReportListener {
 					"Verify Service Request Tabs Item's Values with Overview Tab Item's Values -FAIL for Service Request Tab");
 
 			Assert.assertEquals(myJuniperPage.verifyParentTabsValues(driver, CommonUtil.TAB_PRODUCT), true,
-					"Verify Service Request Tabs Item's Values with Overview Tab Item's Values -FAIL for Products Tab");
+					"Verify Product Tabs Item's Values with Overview Tab Item's Values -FAIL for Products Tab");
 
 			Assert.assertEquals(myJuniperPage.verifyParentTabsValues(driver, CommonUtil.TAB_CONTRACTS), true,
-					"Verify Service Request Tabs Item's Values with Overview Tab Item's Values -FAIL for Contracts Tab");
+					"Verify Contract Tabs Item's Values with Overview Tab Item's Values -FAIL for Contracts Tab");
 
 			logInfo.pass("Verify Overview Tab's data with other Mandatory Tab's data - SUCCESS");
 			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
