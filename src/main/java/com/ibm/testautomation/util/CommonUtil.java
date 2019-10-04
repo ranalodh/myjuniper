@@ -68,8 +68,8 @@ public class CommonUtil {
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability("version", "");
 			capabilities.setPlatform(Platform.LINUX);
-			webDriver = new RemoteWebDriver(new URL("http://184.173.1.68:30670/wd/hub"), capabilities);
-			webDriver.manage().window().maximize();
+			webDriver = new RemoteWebDriver(new URL("http://184.173.1.68:31847/wd/hub"), capabilities);
+			//webDriver.manage().window().maximize();
 			webDriver.navigate().refresh();
 
 		} catch (Exception exception) {
