@@ -33,7 +33,7 @@ public class ExtentReportListener {
 	 */
 	public static ExtentReports setUp() {
 		String reportLocation = System.getProperty("screenshotDirectory", "Reports") + File.separator
-				+ "_MyJuniper.html";
+				+ "MyJuniper.html";
 		report = new ExtentHtmlReporter(reportLocation);
 		report.config().setDocumentTitle("Application Flow Check Test Report");
 		report.config().setReportName("Application Flow Check Test Report");

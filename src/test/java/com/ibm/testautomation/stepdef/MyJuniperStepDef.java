@@ -80,10 +80,9 @@ public class MyJuniperStepDef extends ExtentReportListener {
 			String expectedLoginPageTitle = properties.getProperty("loginpage.title");
 			String actualLoginPageTitle = loginPage.getTitle(driver);
 			Assert.assertEquals(actualLoginPageTitle, expectedLoginPageTitle, "MyJuniper Login Page is not opening!");
-
 			logInfo.pass("Successfully open MyJuniper Login Page on - " + properties.getProperty("env"));
+			
 			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
-
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e.getLocalizedMessage());
 			Assert.fail();
@@ -107,11 +106,9 @@ public class MyJuniperStepDef extends ExtentReportListener {
 			String actualMyJuniperPageTitle = loginPage.getTitle(driver);
 			LOGGER.info("After Login ");
 			Assert.assertEquals(actualMyJuniperPageTitle, expectedMyJuniperPageTitle, "Login is not success!");
-			System.out.println("After actualMyJuniperPageTitle ");
-
 			logInfo.pass("Login is success");
+			
 			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
-
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e.getLocalizedMessage());
 			Assert.fail();
@@ -127,17 +124,15 @@ public class MyJuniperStepDef extends ExtentReportListener {
 
 		try {
 			logInfo = test.createNode(new GherkinKeyword("Then"), "Enter Customer Email");
-			LOGGER.info("In externalLogin ");
+			LOGGER.info("In external Login ");
 			myJuniperPage.externalLogin(driver);
-			LOGGER.info("After externalLogin ");
-			// Assert.assertEquals(myJuniperPage.isOverviewExists(driver), true, "External
-			// Login is not success!");
+			LOGGER.info("After external Login ");
 			/** Validate Email Address is Valid to see the Dashboard Records **/
 			LOGGER.info("Email Address is Valid to see the Dashboard Records");
-			Assert.assertEquals(myJuniperPage.isRecordExist(driver), false,
+			Assert.assertEquals(myJuniperPage.isNoRecordExist(driver), false,
 					"Email Id Exist but No Records found for Email this Email Id !!");
-
 			logInfo.pass("External Login is success and record found");
+			
 			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e.getLocalizedMessage());
@@ -153,14 +148,12 @@ public class MyJuniperStepDef extends ExtentReportListener {
 	public void verify_all_mnadatory_parent_tabs_are_present() throws Throwable {
 		try {
 			logInfo = test.createNode(new GherkinKeyword("Then"), "Verify All Mnadatory Parent Tabs are present");
-
 			/** validate mandatory Tabs **/
 			LOGGER.info("Validate mandatory Tabs present or not");
 			Assert.assertEquals(myJuniperPage.valdateMandatoryTabs(driver), true, "Mandatory Tabs are not present !!");
-
 			logInfo.pass("Verify All Mnadatory Parent Tabs are present - SUCCESS");
-			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
-			// Validate Each Tab data values
+			
+			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));		
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e.getLocalizedMessage());
 			Assert.fail();
@@ -208,8 +201,8 @@ public class MyJuniperStepDef extends ExtentReportListener {
 			}
 
 			logInfo.pass("Verify All Tabs are working - SUCCESS");
-			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
-			// Validate Each Tab data values
+			
+			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));		
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e.getLocalizedMessage());
 			Assert.fail();
@@ -236,8 +229,8 @@ public class MyJuniperStepDef extends ExtentReportListener {
 					"Verify Contract Tabs Item's Values with Overview Tab Item's Values -FAIL for Contracts Tab");
 
 			logInfo.pass("Verify Overview Tab's data with other Mandatory Tab's data - SUCCESS");
+			
 			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
-			// Validate Each Tab data values
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e.getLocalizedMessage());
 			Assert.fail();
@@ -264,8 +257,8 @@ public class MyJuniperStepDef extends ExtentReportListener {
 					"Verify Mandatory Tab's data with their child Tab's data - FAIL for Contracts Tab");
 
 			logInfo.pass("Verify Mandatory Tab's data with their child Tab's data - SUCCESS");
-			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
-			// Validate Each Tab data values
+			
+			logInfo.addScreenCaptureFromPath(captureScreenShot(driver));	
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e.getLocalizedMessage());
 			Assert.fail();

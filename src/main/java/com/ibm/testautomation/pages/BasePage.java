@@ -19,7 +19,6 @@ public class BasePage {
 		LOGGER.info("Opening MyJuniper Application URL : " + url);
 
 		driver.get(url);
-		Thread.sleep(4000);
 
 	}
 }

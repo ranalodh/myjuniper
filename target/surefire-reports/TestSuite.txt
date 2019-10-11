@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 64.956 s <<< FAILURE! - in TestSuite
-feature(com.ibm.testautomation.testrunner.TestRunner)  Time elapsed: 61.002 s  <<< FAILURE!
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 1, Time elapsed: 33.807 s <<< FAILURE! - in TestSuite
+feature(com.ibm.testautomation.testrunner.TestRunner)  Time elapsed: 31.991 s  <<< FAILURE!
 java.lang.AssertionError: null
 

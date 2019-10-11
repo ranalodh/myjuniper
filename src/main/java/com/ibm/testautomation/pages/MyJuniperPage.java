@@ -57,6 +57,7 @@ public class MyJuniperPage extends BasePage {
 
 	/** ERROR MESSGAE IF NO RECORD **/
 	private By noRecordErrorMsg = By.xpath("//span[@id='message']");
+	private String noRecordMsg = "The provided email address does not exist in the records";
 
 	/** RENEWAL QUOTES AND RMAs CHILD TAB SECTION **/
 	private By childTabs = By.xpath("//div[@class='mdl-tabs__tab-bar']//a");
@@ -89,7 +90,7 @@ public class MyJuniperPage extends BasePage {
 	public void externalLogin(WebDriver driver) throws InterruptedException, Throwable {
 
 		Properties properties = obj.getProperty();
-		
+
 		LOGGER.info("actionLib.isElementExist(loginViewContainer, driver) "
 				+ actionLib.isElementExist(loginViewContainer, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT));
 
@@ -105,62 +106,123 @@ public class MyJuniperPage extends BasePage {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// Check if record present for provided email address
-	public boolean isRecordExist(WebDriver driver) throws Throwable {
+	public boolean isNoRecordExist(WebDriver driver) throws Throwable {
 
-		return actionLib.isElementExist(noRecordErrorMsg, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
+		boolean isRecordExist = false;
+		if (actionLib.isElementExist(noRecordErrorMsg, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)) {
+			if (actionLib.getElementText(noRecordErrorMsg, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
+					.startsWith(noRecordMsg)) {
+				isRecordExist = true;
+			} else {
+				isRecordExist = false;
+			}
+		}
+		return isRecordExist;
+		// return actionLib.isElementExist(noRecordErrorMsg, driver,
+		// CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// Validate if Overview Tab exist on Dashboard or not
 	public boolean isOverviewExists(WebDriver driver) throws Throwable {
 
 		return actionLib.isElementExist(overview, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// Validate if Renewal Quotes Tab exist on Dashboard or not
 	public boolean isRenewalQuotesExists(WebDriver driver) throws Throwable {
 
 		return actionLib.isElementExist(renewalQuotes, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// Validate if Renewal Quotes Tab exist on Dashboard or not
 	public boolean isRMAsExists(WebDriver driver) throws Throwable {
 
 		return actionLib.isElementExist(rmas, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	// Click Overview Link
 	public void clickoverView(WebDriver driver) throws Throwable {
 		actionLib.javascriptClick(overview, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	// Click Service Request Link
 	public void clickSR(WebDriver driver) throws Throwable {
 		actionLib.javascriptClick(serviceRequest, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	public void clickProducts(WebDriver driver) throws Throwable {
 		actionLib.javascriptClick(products, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	public void clickContracts(WebDriver driver) throws Throwable {
 		actionLib.javascriptClick(contracts, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	public void clickRMAs(WebDriver driver) throws Throwable {
 		actionLib.javascriptClick(rmas, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	public void clickRenewalQuotes(WebDriver driver) throws Throwable {
 		actionLib.javascriptClick(renewalQuotes, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// validate mandatory tabs
 	public boolean valdateMandatoryTabs(WebDriver driver) throws Throwable {
 		boolean isMandatoryTabsPresent = false;
 
-		if (actionLib.isElementExist(serviceRequest, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT) && actionLib.isElementExist(products, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
+		if (actionLib.isElementExist(serviceRequest, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
+				&& actionLib.isElementExist(products, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
 				&& actionLib.isElementExist(contracts, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)) {
 			isMandatoryTabsPresent = true;
 		} else {
@@ -168,7 +230,13 @@ public class MyJuniperPage extends BasePage {
 		}
 		return isMandatoryTabsPresent;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @param tabName
+	 * @return
+	 * @throws Throwable
+	 */
 	// validate total 5 buttons are present under each child tab or not
 	public boolean validateChildButtons(WebDriver driver, String tabName) throws Throwable {
 		boolean validateChildButtons = false;
@@ -203,7 +271,8 @@ public class MyJuniperPage extends BasePage {
 		} else if (tabName.equalsIgnoreCase(CommonUtil.TAB_RMA)) {
 			if (actionLib.isElementExist(filterOptions, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
 					&& actionLib.isElementExist(systemDefaultView, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
-					&& actionLib.isElementExist(exportRMAs, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT) && actionLib.isElementExist(pst, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
+					&& actionLib.isElementExist(exportRMAs, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
+					&& actionLib.isElementExist(pst, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
 					&& actionLib.isElementExist(refreshRMAs, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)) {
 
 				validateChildButtons = true;
@@ -213,7 +282,8 @@ public class MyJuniperPage extends BasePage {
 		} else {
 			if (actionLib.isElementExist(filterOptions, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
 					&& actionLib.isElementExist(systemDefaultView, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
-					&& actionLib.isElementExist(export, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT) && actionLib.isElementExist(refresh, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
+					&& actionLib.isElementExist(export, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
+					&& actionLib.isElementExist(refresh, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
 					&& actionLib.isElementExist(pst, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)) {
 
 				validateChildButtons = true;
@@ -223,7 +293,12 @@ public class MyJuniperPage extends BasePage {
 		}
 		return validateChildButtons;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// validate SR tab is working or not
 	public boolean validateSRTabFunctions(WebDriver driver) throws Throwable {
 		boolean validateSRTabFunctions = false;
@@ -240,7 +315,12 @@ public class MyJuniperPage extends BasePage {
 
 		return validateSRTabFunctions;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// validate Products tab is working or not
 	public boolean validateProductsFunctions(WebDriver driver) throws Throwable {
 		boolean validateProductsFunctions = false;
@@ -256,7 +336,12 @@ public class MyJuniperPage extends BasePage {
 		}
 		return validateProductsFunctions;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// validate Contracts tab is working or not
 	public boolean validateContractsFunctions(WebDriver driver) throws Throwable {
 		boolean validateContractsFunctions = false;
@@ -273,7 +358,12 @@ public class MyJuniperPage extends BasePage {
 
 		return validateContractsFunctions;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// Validate Renewal (If exist) Quotes tab is working or not
 	public boolean validateRenewalQuotesFunctions(WebDriver driver) throws Throwable {
 		boolean validateRenewalQuotesFunctions = false;
@@ -281,14 +371,20 @@ public class MyJuniperPage extends BasePage {
 		clickRenewalQuotes(driver);
 		commonUtil.captureScreen(driver);
 		for (int i = 1; i <= actionLib.getElementSize(childTabs, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT); i++) {
-			actionLib.javascriptClick(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"), driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
+			actionLib.javascriptClick(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"), driver,
+					CommonUtil.ELEMENT_WAIT_TIMEOUT);
 			Thread.sleep(CommonUtil.ELEMENT_WAIT_TIMEOUT);
 			commonUtil.captureScreen(driver);
 			validateRenewalQuotesFunctions = validateChildButtons(driver, CommonUtil.TAB_RENEWAL_QUOTES);
 		}
 		return validateRenewalQuotesFunctions;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	// Validate RMSs (If exist) Quotes tab is working or not
 	public boolean validateRMAsFunctions(WebDriver driver) throws Throwable {
 		boolean validateRMAsFunctions = false;
@@ -296,7 +392,8 @@ public class MyJuniperPage extends BasePage {
 		clickRMAs(driver);
 		commonUtil.captureScreen(driver);
 		for (int i = 1; i <= actionLib.getElementSize(childTabs, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT); i++) {
-			actionLib.javascriptClick(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"), driver, CommonUtil.ELEMENT_WAIT_TIMEOUT);
+			actionLib.javascriptClick(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"), driver,
+					CommonUtil.ELEMENT_WAIT_TIMEOUT);
 			Thread.sleep(CommonUtil.ELEMENT_WAIT_TIMEOUT);
 			commonUtil.captureScreen(driver);
 			validateRMAsFunctions = validateChildButtons(driver, CommonUtil.TAB_RMA);
@@ -309,7 +406,12 @@ public class MyJuniperPage extends BasePage {
 	 * 
 	 * @throws Throwable
 	 **/
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	public HashMap<String, String> getOverviewItemNameValues(WebDriver driver) throws Throwable {
 		HashMap<String, String> overviewMap = new HashMap<>();
 
@@ -323,7 +425,12 @@ public class MyJuniperPage extends BasePage {
 
 		return overviewMap;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	public HashMap<String, String> getSRItemNameValues(WebDriver driver) throws Throwable {
 
 		HashMap<String, String> srMap = new HashMap<>();
@@ -338,7 +445,12 @@ public class MyJuniperPage extends BasePage {
 
 		return srMap;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	public HashMap<String, String> getProductItemNameValues(WebDriver driver) throws Throwable {
 		HashMap<String, String> productMap = new HashMap<>();
 
@@ -352,7 +464,12 @@ public class MyJuniperPage extends BasePage {
 
 		return productMap;
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	public HashMap<String, String> getContractItemNameValues(WebDriver driver) throws Throwable {
 
 		HashMap<String, String> contractMap = new HashMap<>();
@@ -368,6 +485,13 @@ public class MyJuniperPage extends BasePage {
 		return contractMap;
 	}
 
+	/**
+	 * 
+	 * @param driver
+	 * @param tabName
+	 * @return
+	 * @throws Throwable
+	 */
 	// Verify Overview Tab Item values with mandatory tabs Item Values
 	public boolean verifyParentTabsValues(WebDriver driver, String tabName) throws Throwable {
 
@@ -440,7 +564,13 @@ public class MyJuniperPage extends BasePage {
 		return verifyParentTabsValues;
 
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @param tabName
+	 * @return
+	 * @throws Throwable
+	 */
 	// Get child Tab Key Values - Mandatory Tabs
 	public HashMap<String, String> getMandatoryChildItemValue(WebDriver driver, String tabName) throws Throwable {
 		HashMap<String, String> mandatoryChildItemValue = new HashMap<>();
@@ -473,6 +603,13 @@ public class MyJuniperPage extends BasePage {
 		return mandatoryChildItemValue;
 	}
 
+	/**
+	 * 
+	 * @param driver
+	 * @param tabName
+	 * @return
+	 * @throws Throwable
+	 */
 	// Get child Tab Key Values - Secondary Tabs
 	public HashMap<String, String> getSecondaryChildItemValue(WebDriver driver, String tabName) throws Throwable {
 		HashMap<String, String> secondaryChildItemValue = new HashMap<>();
@@ -487,12 +624,10 @@ public class MyJuniperPage extends BasePage {
 
 		for (int i = 1; i <= actionLib.getElementSize(childTabs, driver, CommonUtil.ELEMENT_WAIT_TIMEOUT); i++) {
 			LOGGER.info("In getSecondaryChildItemValue Loop");
-			childTabName = actionLib
-					.getElementText(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"), driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
-					.replace("(", "=").split("=")[0];
-			childTabValue = actionLib
-					.getElementText(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"), driver, CommonUtil.ELEMENT_WAIT_TIMEOUT)
-					.replace("(", "=").split("=")[1].replace(")", "");
+			childTabName = actionLib.getElementText(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"), driver,
+					CommonUtil.ELEMENT_WAIT_TIMEOUT).replace("(", "=").split("=")[0];
+			childTabValue = actionLib.getElementText(By.xpath("//div[@class='mdl-tabs__tab-bar']//a[" + i + "]"),
+					driver, CommonUtil.ELEMENT_WAIT_TIMEOUT).replace("(", "=").split("=")[1].replace(")", "");
 			LOGGER.info("childTabName " + childTabName);
 			LOGGER.info("childTabValue " + childTabValue);
 			secondaryChildItemValue.put(childTabName, childTabValue);
@@ -501,6 +636,13 @@ public class MyJuniperPage extends BasePage {
 		return secondaryChildItemValue;
 	}
 
+	/**
+	 * 
+	 * @param driver
+	 * @param tabName
+	 * @return
+	 * @throws Throwable
+	 */
 	// Compare Parent and Child Tab Data
 	public boolean verifyParentChildData(WebDriver driver, String tabName) throws Throwable {
 

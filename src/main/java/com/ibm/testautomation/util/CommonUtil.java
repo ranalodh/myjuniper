@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -31,13 +32,15 @@ public class CommonUtil {
 
 	public static WebDriver webDriver = null;
 	public final static Logger LOGGER = Logger.getLogger(CommonUtil.class.getName());
-	public final static int ELEMENT_WAIT_TIMEOUT = 2000;
+	public final static int ELEMENT_WAIT_TIMEOUT = 45;
 	public final static String TAB_SERVICE_REQUEST = "SR";
 	public final static String TAB_PRODUCT = "PRODUCTS";
 	public final static String TAB_CONTRACTS = "CONTRACTS";
 	public final static String TAB_RENEWAL_QUOTES = "RENEWALQUOTES";
 	public final static String TAB_RMA = "RMA";
 	public final static String TAB_OVERVIEW = "OVERVIEW";
+	static PropertiesFileReader obj = new PropertiesFileReader();
+
 
 	/**
 	 * 
@@ -58,17 +61,17 @@ public class CommonUtil {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * 	 * @return
 	 */
-	public static WebDriver getRemoteDriver() {
-
+	public static WebDriver getRemoteDriver() {		
+		
 		try {
-
+			Properties properties = obj.getProperty();
+			
 			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 			capabilities.setCapability("version", "");
 			capabilities.setPlatform(Platform.LINUX);
-			webDriver = new RemoteWebDriver(new URL("http://184.173.1.68:31847/wd/hub"), capabilities);
+			webDriver = new RemoteWebDriver(new URL(properties.getProperty("grid_hub_url")), capabilities);
 			//webDriver.manage().window().maximize();
 			webDriver.navigate().refresh();
 
@@ -78,6 +81,10 @@ public class CommonUtil {
 		return webDriver;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public static WebDriver getDriver() {
 
 		try {
@@ -99,6 +106,11 @@ public class CommonUtil {
 		return webDriver;
 	}
 
+	/**
+	 * 
+	 * @param element
+	 * @param driver
+	 */
 	/**
 	 * 
 	 * @param element

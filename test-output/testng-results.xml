@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation Test Report" duration-ms="99069" started-at="2019-10-03T10:53:25Z" finished-at="2019-10-03T10:55:04Z">
+  <suite name="Automation Test Report" duration-ms="320402" started-at="2019-10-07T07:36:30Z" finished-at="2019-10-07T07:41:50Z">
     <groups>
     </groups>
-    <test name="Automation Test Report" duration-ms="99069" started-at="2019-10-03T10:53:25Z" finished-at="2019-10-03T10:55:04Z">
+    <test name="Automation Test Report" duration-ms="320402" started-at="2019-10-07T07:36:30Z" finished-at="2019-10-07T07:41:50Z">
       <class name="com.ibm.testautomation.testrunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="setUpClass" is-config="true" duration-ms="198" started-at="2019-10-03T10:53:25Z" finished-at="2019-10-03T10:53:25Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="setUpClass" is-config="true" duration-ms="243" started-at="2019-10-07T07:36:30Z" finished-at="2019-10-07T07:36:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="feature" duration-ms="98455" started-at="2019-10-03T10:53:26Z" data-provider="features" finished-at="2019-10-03T10:55:04Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="feature" duration-ms="319698" started-at="2019-10-07T07:36:31Z" data-provider="features" finished-at="2019-10-07T07:41:50Z">
           <params>
             <param index="0">
               <value>
@@ -32,15 +32,15 @@
               <![CDATA[java.lang.AssertionError: null
 at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.fail(Assert.java:103)
-at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_mnadatory_parent_tabs_are_present(MyJuniperStepDef.java:175)
-at ✽.Verify All Mandatory Parent Tabs are present(src/test/java/Features/MyJuniper.feature:9)
+at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_tabs_are_working(MyJuniperStepDef.java:208)
+at ✽.Verify All Tabs are working(src/test/java/Features/MyJuniper.feature:10)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="tearDownClass" is-config="true" duration-ms="13" started-at="2019-10-03T10:55:04Z" finished-at="2019-10-03T10:55:04Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@544fe44c]" name="tearDownClass" is-config="true" duration-ms="5" started-at="2019-10-07T07:41:50Z" finished-at="2019-10-07T07:41:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

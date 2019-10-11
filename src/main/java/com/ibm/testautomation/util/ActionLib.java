@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -19,7 +20,14 @@ public class ActionLib {
 
 	private final static Logger LOGGER = Logger.getLogger(ActionLib.class.getName());
 	Select dropdown = null;
-
+	
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param intSyncTimeOut
+	 * @throws Throwable
+	 */
 	public void click(By objectref, WebDriver driver, int intSyncTimeOut) throws Throwable {
 		try {
 
@@ -70,6 +78,14 @@ public class ActionLib {
 		}
 	}
 */
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param intSyncTimeOut
+	 * @return
+	 * @throws Throwable
+	 */
 	public boolean isElementExist(By objectref, WebDriver driver, int intSyncTimeOut) throws Throwable
 
 	{
@@ -99,7 +115,14 @@ public class ActionLib {
 		return isElementExist;
 
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param intSyncTimeOut
+	 * @return
+	 * @throws Throwable
+	 */
 	public int getElementSize(By objectref, WebDriver driver, int intSyncTimeOut) throws Throwable
 
 	{
@@ -137,7 +160,14 @@ public class ActionLib {
 		return elementSize;
 
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param expectedOptions
+	 * @return
+	 * @throws Throwable
+	 */
 	public boolean validateListItems(By objectref, WebDriver driver, List<String> expectedOptions) throws Throwable
 
 	{
@@ -171,7 +201,12 @@ public class ActionLib {
 		return isMatched;
 
 	}
-
+	/**
+	 * 
+	 * @param dropdown
+	 * @param driver
+	 * @return
+	 */
 	public List<String> getAllOptions(By dropdown, WebDriver driver) {
 
 		List<String> options = new ArrayList<String>();
@@ -189,7 +224,14 @@ public class ActionLib {
 		LOGGER.info("options " + options);
 		return options;
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param intSyncTimeOut
+	 * @return
+	 * @throws Throwable
+	 */
 	public String getElementText(By objectref, WebDriver driver, int intSyncTimeOut) throws Throwable
 
 	{
@@ -207,8 +249,10 @@ public class ActionLib {
 
 			if (element!=null){
 				LOGGER.info("Object found");
-				elementText = element.getText().trim();
-				System.out.println(elementText);
+				elementText = element.getText().trim();					
+				if(elementText.equals("")) {
+					elementText = "N/A";
+				}
 				LOGGER.info("Object Value --- " + elementText);
 			} else{
 				elementText = "No Element Found";
@@ -221,7 +265,15 @@ public class ActionLib {
 		return elementText;
 
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param attributeName
+	 * @param intSyncTimeOut
+	 * @return
+	 * @throws Throwable
+	 */
 	public String getElementAttribute(By objectref, WebDriver driver, String attributeName, int intSyncTimeOut) throws Throwable {
 
 		String elementText = "";
@@ -248,6 +300,12 @@ public class ActionLib {
 		return elementText;
 
 	}
+	/**
+	 * 
+	 * @param driver
+	 * @return
+	 * @throws Throwable
+	 */
 	public String getAlertText(WebDriver driver) throws Throwable
 
 	{
@@ -264,7 +322,11 @@ public class ActionLib {
 		return alertText;
 
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	public void alertAccess(WebDriver driver) throws Throwable
 
 	{
@@ -278,7 +340,11 @@ public class ActionLib {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	public void alertDismiss(WebDriver driver) throws Throwable
 
 	{
@@ -292,7 +358,13 @@ public class ActionLib {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param index
+	 * @throws Throwable
+	 */
 	public void selectByIndex(By objectref, WebDriver driver, int index) throws Throwable
 
 	{
@@ -320,7 +392,13 @@ public class ActionLib {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param visibleText
+	 * @throws Throwable
+	 */
 	public void selectByVisibleText(By objectref, WebDriver driver, String visibleText) throws Throwable
 
 	{
@@ -348,7 +426,13 @@ public class ActionLib {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param value
+	 * @throws Throwable
+	 */
 	public void selectByValue(By objectref, WebDriver driver, String value) throws Throwable
 
 	{
@@ -377,7 +461,13 @@ public class ActionLib {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param value
+	 * @throws Throwable
+	 */
 	public void sendValueToInput(By objectref, WebDriver driver, String value) throws Throwable
 
 	{
@@ -403,7 +493,11 @@ public class ActionLib {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param driver
+	 * @throws Throwable
+	 */
 	public void switchWindow(WebDriver driver) throws Throwable
 
 	{
@@ -430,7 +524,12 @@ public class ActionLib {
 
 		}
 	}
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param driver
+	 * @param intSyncTimeOut
+	 */
 	public void javascriptClick(By objectref, WebDriver driver, int intSyncTimeOut) {
 		try {
 			
@@ -456,7 +555,7 @@ public class ActionLib {
 	}
 	
 	
-	public WebElement WaitForObjectToLoadAndReturnIfExist(By objectref, int intTimeInMillis, WebDriver driver) throws Exception {
+	/*public WebElement WaitForObjectToLoadAndReturnIfExist(By objectref, int intTimeInMillis, WebDriver driver) throws Exception {
 
 		long t0, t1;
 		boolean blnObjectExistFlag=false;
@@ -514,14 +613,30 @@ public class ActionLib {
 		}
 
 		return elementReturned;
-	}
+	}*/
 	/*
 	public WebElement WaitForObjectToLoadAndReturnIfExist(By objectref, int intTimeInMillis, WebDriver driver) throws Exception {
 		
 		WebDriverWait wait = new WebDriverWait(driver, intTimeInMillis);
-	   // WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(objectref));
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(objectref));
 	    return element;
 	}*/
-
+	/**
+	 * 
+	 * @param objectref
+	 * @param timeoutInSeconds
+	 * @param driver
+	 * @return
+	 * @throws Exception
+	 */
+	public WebElement WaitForObjectToLoadAndReturnIfExist(By objectref, int timeoutInSeconds, WebDriver driver) throws Exception {
+		WebElement element = null;
+		try {
+		WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+		element = wait.until(ExpectedConditions.presenceOfElementLocated(objectref));
+		}catch(NoSuchElementException elementException) {
+			elementException.printStackTrace();
+		}
+	    return element;
+	}
 }

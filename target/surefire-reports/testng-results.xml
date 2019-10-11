@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Automation Test Report" duration-ms="61763" started-at="2019-10-04T08:53:33Z" finished-at="2019-10-04T08:54:35Z">
+  <suite name="Automation Test Report" duration-ms="32360" started-at="2019-10-11T07:55:02Z" finished-at="2019-10-11T07:55:34Z">
     <groups>
     </groups>
-    <test name="Automation Test Report" duration-ms="61763" started-at="2019-10-04T08:53:33Z" finished-at="2019-10-04T08:54:35Z">
+    <test name="Automation Test Report" duration-ms="32360" started-at="2019-10-11T07:55:02Z" finished-at="2019-10-11T07:55:34Z">
       <class name="com.ibm.testautomation.testrunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="setUpClass" is-config="true" duration-ms="288" started-at="2019-10-04T08:53:34Z" finished-at="2019-10-04T08:53:34Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="setUpClass" is-config="true" duration-ms="121" started-at="2019-10-11T07:55:02Z" finished-at="2019-10-11T07:55:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="feature" duration-ms="60984" started-at="2019-10-04T08:53:34Z" data-provider="features" finished-at="2019-10-04T08:54:35Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="feature" duration-ms="31976" started-at="2019-10-11T07:55:02Z" data-provider="features" finished-at="2019-10-11T07:55:34Z">
           <params>
             <param index="0">
               <value>
@@ -32,15 +32,15 @@
               <![CDATA[java.lang.AssertionError: null
 at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.fail(Assert.java:103)
-at com.ibm.testautomation.stepdef.MyJuniperStepDef.verify_all_mnadatory_parent_tabs_are_present(MyJuniperStepDef.java:166)
-at ✽.Verify All Mandatory Parent Tabs are present(src/test/java/Features/MyJuniper.feature:9)
+at com.ibm.testautomation.stepdef.MyJuniperStepDef.enter_customer_email(MyJuniperStepDef.java:139)
+at ✽.Enter Customer Email(src/test/java/Features/MyJuniper.feature:8)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="SKIP" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2019-10-04T08:54:35Z" finished-at="2019-10-04T08:54:35Z">
+        <test-method status="SKIP" signature="tearDownClass()[pri:0, instance:com.ibm.testautomation.testrunner.TestRunner@1753acfe]" name="tearDownClass" is-config="true" duration-ms="0" started-at="2019-10-11T07:55:34Z" finished-at="2019-10-11T07:55:34Z">
           <exception class="org.testng.SkipException">
             <message>
               <![CDATA[Skipped after failure. See parameter [skipAfterFailureCount] in surefire or failsafe plugin.]]>
