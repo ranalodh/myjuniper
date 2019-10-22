@@ -3,5 +3,6 @@
   sudo: true
   remote_user: ec2-user
   tasks: 
-      - name: Execute the script
-        command: cd /myjuniper
+      - name: Chnage dir to myjuniper
+        shell:
+            chdir: /myjuniper
