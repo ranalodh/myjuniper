@@ -1,0 +1,7 @@
+---
+- hosts: ec2-54-159-136-238.compute-1.amazonaws.com
+  sudo: true
+  remote_user: ec2-user
+  tasks: 
+      - name: Execute the script
+        command: cd /myjuniper
