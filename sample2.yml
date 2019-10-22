@@ -5,4 +5,5 @@
   tasks: 
       - name: Chnage dir to myjuniper
         shell:
+        args:
             chdir: /myjuniper
