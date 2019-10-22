@@ -4,6 +4,6 @@
   remote_user: ec2-user
   tasks: 
       - name: Chnage dir to myjuniper
-        shell:
+        command: ls -lrt
         args:
             chdir: /myjuniper
